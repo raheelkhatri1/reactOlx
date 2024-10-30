@@ -1,81 +1,100 @@
 import React from "react";
 import Mobile from "../images/mobile.png"
+import Vehicles from "../images/car 2 yellow.png"
+import PropertyForSele from "../images/property picter.png"
+import PropertyForRent from "../images/property key.png"
+import ElectronicsHomeAppliances from "../images/camera.png"
+import Bikes from "../images/bike.png"
+import BusinessIndustrialAgriculture from "../images/tarak.png"
+import Services from "../images/services.png"
+import Jobs from "../images/job.png"
+import Animals from "../images/hen.png"
+import FurnitureHomeDecor from "../images/chair.png"
+import Fashionbeauty from "../images/fashion-beauty.png"
+import Kids from "../images/kids..png"
+import BooksSportsHobbies from "../images/books-sports.png"
+import { useState } from "react";
+import { Form } from "react-router-dom";
+import "./card.css"
 
 function Allcategories() {
     const allCategoriesData = [
         {
-            Image : {Mobile},
-            title : "Mobile"
+            Image: Mobile,
+            title: "Mobile"
         },
         {
-            Image : "",
-            title : "Vehicles"
+            Image: Vehicles,
+            title: "Vehicles"
         },
         {
-            Image : "",
-            title : "Property For Sele"
+            Image: PropertyForSele,
+            title: "Property For Sele"
         },
         {
-            Image : "",
-            title : "Property For Rent"
+            Image: PropertyForRent,
+            title: "Property For Rent"
         },
         {
-            Image : "",
-            title : "Electronics & Home Appliances"
+            Image: ElectronicsHomeAppliances,
+            title: "Electronics & Home Appliances"
         },
         {
-            Image : "",
-            title : "Bikes"
+            Image: Bikes,
+            title: "Bikes"
         },
         {
-            Image : "",
-            title : "Business, Industrial & Agriculture"
+            Image: BusinessIndustrialAgriculture,
+            title: "Business, Industrial & Agriculture"
         },
         {
-            Image : "",
-            title : "Services"
+            Image: Services,
+            title: "Services"
         },
         {
-            Image : "",
-            title : "Jobs"
+            Image: Jobs,
+            title: "Jobs"
         },
         {
-            Image : "",
-            title : "Animals"
+            Image: Animals,
+            title: "Animals"
         },
         {
-            Image : "",
-            title : "Furniture & Home Decor"
+            Image: FurnitureHomeDecor,
+            title: "Furniture & Home Decor"
         },
         {
-            Image : "",
-            title : "Fashion & beauty"
+            Image: Fashionbeauty,
+            title: "Fashion & beauty"
         },
         {
-            Image : "",
-            title : "Books, Sports & Hobbies"
+            Image: BooksSportsHobbies,
+            title: "Books, Sports & Hobbies"
         },
         {
-            Image : "",
-            title : "Kids"
+            Image: Kids,
+            title: "Kids"
         },
     ]
-   
+    const [categories, setcategories] = useState(allCategoriesData)
 
-    return(<div>
-            <h3>
-            All categories
-            </h3>
+    return (
+        <div className="margin-left">
+            <h3>All Categories</h3>
+            <div className="cirlcItemsContinar">
 
             {
-             allCategoriesData.map((e)=>{
-                return<div><div/>
-             })
+                categories.map((e)=>{
+                    return<div className="cirlcitems">
+                        <img src={e.Image} />
+                        <h5>{e.title}</h5>
+                    </div>
+                })
             }
 
+            </div>
         </div>
     )
-    
 }
 
 export default Allcategories
